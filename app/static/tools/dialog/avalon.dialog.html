@@ -1,0 +1,20 @@
+<div class='modal fade' :visible='@isOpen' :class="{'in' : @isIn}" :css="{zIndex : @zIndex}" :click='@close'>
+  <div class="modal-dialog" :on-transitionend="@transitionend">
+    <div class="modal-content">
+      <div class="modal-header" :if='@title'>
+        <button type="button" class="close" :click='@close(null)'><span>&times;</span></button>
+        <h4 class="modal-title" :html="@title"></h4>
+      </div>
+      <div class="modal-body" :if="!@content" :css="@bodyStyle">
+        <slot />
+      </div>
+      <div class="modal-body" :if="@content" :css="@bodyStyle" :html="@content">
+      </div>
+      <div class="modal-footer" :if='@buttons && @buttons.length > 0' :css-text-align='@btnAlign'>
+        <button :for='(i,btn) in @buttons' type="button" class="btn" :class="'btn-' + btn.theme" :click='@clickBtn(btn)'>
+          <i :if='btn.iconCls' class='glyphicon ' :class='btn.iconCls'></i> {{btn.text}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
