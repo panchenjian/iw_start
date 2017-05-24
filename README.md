@@ -1,4 +1,4 @@
-# ie-webpack-start
+﻿# ie-webpack-start
 [![Coverage Status](https://travis-ci.org/sayll/ie-webpack-start.svg?branch=master)](https://travis-ci.org/sayll/ie-webpack-start)  [![Coverage Status](https://coveralls.io/repos/github/sayll/ie-webpack-start/badge.svg)](https://coveralls.io/github/sayll/ie-webpack-start) [![Coverage Status](https://codeclimate.com/github/sayll/ie-webpack-start/badges/gpa.svg)](https://codeclimate.com/github/sayll/ie-webpack-start)
 
 <b>IE 9+ 用户请转至：[avalon-webpack-start](https://github.com/sayll/avalon-webpack-start)</b>
@@ -37,6 +37,7 @@
 ## 介绍
 这个一个以webpack2为基础，启用tree-shaking新技术,为打包支持到低版本的`webpack2`实验性脚手架。</br>
 本项目使用[`avalon2`](https://github.com/RubyLouvre/avalon)作为演示框架。</br>
+修改了avalon.js中的createComponentVm()方法。增加了 AB.preHandleComVm(is,def,fragment);其中fragment参数需要引入(作者标记，读者请忽略,引用新版avalon时需要修改)</br>
 
 ### 关于【Webpack】
 1. 服务端使用Express。需要注意的是，只有一个目的那就是提供了`webpack-dev-middleware` 和 `webpack-hot-middleware`（代码热替换）。使用自定义的Express程序替换[webpack-dev-server](https://github.com/webpack/webpack-dev-server)，让它更容易实现universal 渲染和为了不使这个包过于庞大。
