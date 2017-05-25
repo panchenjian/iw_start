@@ -1,26 +1,26 @@
 <div :controller="demo_dropdown" class='demo'>
 	<h2>初始化</h2>
 	<code>html:</code>
-	<pre class='demo-code'>
+	<pre class='demo-code'><code class="lang-javascript">
 		<xmp :widget='@$config'></xmp>
 		<xmp :widget='@$config1'></xmp>
-		<xmp :widget='@$config2'></xmp>
+		<xmp :widget='@$config2'></xmp></code>
 	</pre>
 	<code>js:</code>
-	<pre class='demo-code'>
+	<pre class='demo-code'><code class="lang-javascript">
 		function getData(){
-			return [{
-	      text : 'rewr32r3r',
-	      handler : function(){
-	        alert(1);
-	      }
-	    },{
-	      text : '13f32f',$clickedHide : false
-	    },{
-	      text : 'd12fgew'
-	    },{
-	      text : '23r32r32r'
-	    }];
+					return [{
+			text : '点击自定义事件',val:"00a",
+			handler : function(a,b){
+			  alert("文本值是:"+a+",如果有value值的话是："+b);
+			}
+		  },{
+			text : '点击不关闭',$clickedHide : false
+		  },{
+			text : '点击会显示到父',$tellText:true
+		  },{
+			text : '23r32r32r'
+		  }];
 		}
 		...
 		$config : {
@@ -43,10 +43,17 @@
 	    handler : function(){
 	    	alert("clickbtn");
 			}
-		}
+		}</code>
 	</pre>
 	<code>结果:</code>
+	$config:
 	<xmp :widget='@$config'></xmp>
+	$config1:
 	<xmp :widget='@$config1'></xmp>
+	$config2:
 	<xmp :widget='@$config2'></xmp>
+
+	<h3>可以当二级菜单用，也可以模拟下拉菜单用</h3>
+	<xmp :widget="@$attr"></xmp><br/>
+	<xmp :widget="@$method"></xmp>
 </div>

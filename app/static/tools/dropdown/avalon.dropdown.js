@@ -5,7 +5,9 @@ AB.preHandlers["ms-dropdown"] = function(vm){
 		divider : false,
 		handler : avalon.noop,
 		$clickedHide : true,
-		text : ''
+		text : '',//文本值
+		$tellText:false,//传递文本
+		val:''//文本值与value值
 	};
 	var data = vm.data;
 	avalon.each(data,function(i,v){
@@ -26,10 +28,17 @@ avalon.component("ms-dropdown",{
 		theme : "default",
 		size : "",
 		data : [],
-		text : "testtest",
+		text : "默认文本",
+		val:'',//一般是下拉选择模式使用
 		handler : avalon.noop,
 		clickItem : function(el){
-			el.handler();
+			el.handler(el.text,el.val);
+			if(el.$tellText){
+				this.text=el.text;
+			}
+			if(el.val!=''){//子项有设置值的话，对应传递到父级val.avalon不允许设置默认值为null、undefined
+				this.val=el.val;
+			}
 			if(el.$clickedHide){
 				this.close();
 			}
@@ -43,7 +52,7 @@ avalon.component("ms-dropdown",{
 		},
 		clickBtn : function(isBtn){
 			if(isBtn && this.split) {
-				this.handler();
+				this.handler(this.text,this.val);
 				return;
 			}
 			if(this.$hideEventHandle){
