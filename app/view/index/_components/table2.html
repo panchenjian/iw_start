@@ -1,0 +1,19 @@
+<div ms-controller='widget1' >
+
+            <xmp :widget="{is:'ms-grid'}">
+                <table slot='header' class="header">
+                    <tr>
+                        <td :for="el in @header" style="width:200px" >
+                            {{el}}
+	                    </td>
+	                </tr>
+	            </table>
+	            <table slot="tbody" class="tbody">
+	                <tr :for="obj in @data | limitBy(@count, @start)">
+	                    <td :for="el in obj | selectBy(@header)" style="width:200px">{{el}}</td>
+	                </tr>
+	            </table> 
+	            <ms-pager slot="pager" :widget="{onReady:@aaa}" />
+	    	</xmp>
+	
+		</div>

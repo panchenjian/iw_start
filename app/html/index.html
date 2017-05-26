@@ -5,6 +5,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
 		<title>avalonbootstrap组件</title>
+		<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css">
 	</head>
 	<body :controller="body" class='ms-controller' id='body'>
 		<div class="navbar navbar-inverse">
@@ -23,6 +24,7 @@
 			<div class='center' :for="($index,el) in @demoData" :html="el.html" :visible="@curIndex === $index">
 			</div>
 		</div>
-		
+
+		<script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
 	</body>
 </html>

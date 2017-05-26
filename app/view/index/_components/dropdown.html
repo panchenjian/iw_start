@@ -1,49 +1,51 @@
 <div :controller="demo_dropdown" class='demo'>
 	<h2>初始化</h2>
 	<code>html:</code>
-	<pre class='demo-code'><code class="lang-javascript">
+	<pre class='demo-code'>
 		<xmp :widget='@$config'></xmp>
 		<xmp :widget='@$config1'></xmp>
-		<xmp :widget='@$config2'></xmp></code>
+		<xmp :widget='@$config2'></xmp>
 	</pre>
 	<code>js:</code>
-	<pre class='demo-code'><code class="lang-javascript">
-		function getData(){
-					return [{
-			text : '点击自定义事件',val:"00a",
-			handler : function(a,b){
-			  alert("文本值是:"+a+",如果有value值的话是："+b);
-			}
-		  },{
-			text : '点击不关闭',$clickedHide : false
-		  },{
-			text : '点击会显示到父',$tellText:true
-		  },{
-			text : '23r32r32r'
-		  }];
+	<pre>
+		<code class="lang-javascript">
+function getData(){
+	return [{
+		text : '点击自定义事件',val:"00a",
+		handler : function(a,b){
+		  alert("文本值是:"+a+",如果有value值的话是："+b);
 		}
-		...
-		$config : {
-	    is : "ms-dropdown",
-	    data : getData()
-		},
-		$config1 : {
-	    is : "ms-dropdown",
-	    data : getData(),
-	    split : true,
-	    dropup : true
-		},
-		$config2 : {
-	    is : "ms-dropdown",
-	    data : getData(),
-	    split : true,
-	    dropup : true,
-	    size : 'lg',
-	    theme : "success",
-	    handler : function(){
-	    	alert("clickbtn");
-			}
-		}</code>
+	  },{
+		text : '点击不关闭',$clickedHide : false
+	  },{
+		text : '点击会显示到父',$tellText:true
+	  },{
+		text : '23r32r32r'
+	  }];
+}
+//...
+$config : {
+    is : "ms-dropdown",
+    data : getData()
+},
+$config1 : {
+    is : "ms-dropdown",
+    data : getData(),
+    split : true,
+    dropup : true
+},
+$config2 : {
+    is : "ms-dropdown",
+    data : getData(),
+    split : true,
+    dropup : true,
+    size : 'lg',
+    theme : "success",
+    handler : function(){
+    	alert("clickbtn");
+	}
+}
+		</code>
 	</pre>
 	<code>结果:</code>
 	$config:
