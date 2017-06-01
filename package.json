@@ -13,6 +13,7 @@
     "clean": "rimraf build",
     "build": "better-npm-run build",
     "deploy": "npm run clean && npm run build",
+    "ab":"webpack --config config/webpack/webpack.config2",
     "test": "better-npm-run test",
     "test:dev": "better-npm-run test:dev",
     "test:coveralls": "cat ./build/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
