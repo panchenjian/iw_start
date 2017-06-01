@@ -1,0 +1,33 @@
+<div :controller="demo_moneyInput" class='demo'>
+	<h2>金额输入框组件</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+		
+		<xmp :widget='@$htmlIpt'></xmp>
+		<xmp :widget='@$jsIpt'></xmp>
+	</pre>
+	<code>js:</code>
+	<pre class='demo-code'>
+		$htmlIpt : {
+	    	is : "ms-mnyipt"
+		},
+		$jsIpt : {
+	    	is : "ms-mnyipt",
+	    	max:1000,
+	    	referVal:"300",
+	    	hideZero:false,
+	    	theme:"aa",
+	    	handler:function(a,b){
+	    		avalon.log("金额值是："+a+",如果有辅助比较金额"+b);
+	    	}
+		}
+	</pre>
+	<code>结果:</code><br/>
+	htmlIpt:
+	<xmp :widget='@$htmlIpt'></xmp>
+	jsIpt:看看组件的class名
+	<xmp :widget='@$jsIpt'></xmp>
+	<br/><br/>
+	<xmp :widget="@$attr"></xmp><br/>
+	<xmp :widget="@$method"></xmp>
+</div>

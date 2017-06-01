@@ -20,6 +20,7 @@ avalon.define({
 	data : getData()
 	},
 	$config1 : {
+		$id:"atest",
 	is : "ms-dropdown",
 	data : getData(),
 	split : true,
@@ -49,7 +50,7 @@ avalon.define({
     $frontPageData : [{
       name : "text",type:"string",des : "文字显示内容",value : ""
     },{
-      name : "val",type:"string",des : "下拉框选用，如需要文本值与真实值不一致，可将value值赋此",value : ""
+      name : "val",type:"string",des : "下拉框选用，如需要文本值与真实值不一致，可将value值赋此。也可方便父组件单独获取value值",value : ""
     },{
       name : "$clickedHide",type : "bool",des : "点击后是否需要自关闭",value : "true    是"
     },{
