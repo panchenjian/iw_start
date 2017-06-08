@@ -8,6 +8,7 @@ require("./dialog/avalon.dialog");
 require("./table/avalon.table");
 require("./autocomplete/avalon.autocomplete");
 require("./dropdown/avalon.dropdown");
+require("./chooseli/avalon.chooseli");
 require("./mnyipt/avalon.mnyipt");
 require("./tooltip/avalon.tooltip");
 require("./tab/avalon.tab");

@@ -560,3 +560,12 @@
 	right: -1px;top: 50%;margin-top: -10px;
 }
 .maccordion-i{margin-right: 5px}
+/*chooseli*/
+.chooseUl{padding:0;margin:0;}
+.chooseUl li{list-style: none;cursor: pointer;padding-left: 24px;}
+.checkRadio,.checkboxs{position:relative;cursor:pointer}
+.checkedRadio:before,.checkRadio:before,.checkboxs:before,.checkedboxs:before,.le5:before{content:'';background: url('../../img/blue.png') no-repeat -192px 0px;position:absolute;top:50%;left:5px;width:15px;height:15px;margin-top:-7px;}
+.checkedRadio:before{background-position:-168px 0px;}
+.checkboxs:before{background-position:0px 0px;}
+.checkedboxs:before{background-position:-48px 0px;}
+.le5:before{left:0px;}
