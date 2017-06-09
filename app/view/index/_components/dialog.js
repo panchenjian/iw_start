@@ -15,7 +15,7 @@ avalon.define({
 		is : "ms-dialog",
 		title : 'jsDialog',
 		content : "<h1>rr444rrr</h1><h2>regergrg</h2>",
-		buttons : [{text : 'ok',close : true}]
+		buttons : [{text : 'ok',close : true,theme:'success'}]
 	},
 	showJsDialog : function(){
 		avalon.vmodels.jsDialog.open();
@@ -56,7 +56,7 @@ avalon.define({
       name : "close",type:"bool",des : "点击按钮后是否自动关闭dialog(若有handler则先执行handler,如果close为true但是handler返回false，则不关闭dialog)",
       value : "false"
     },{
-      name : "theme",type : "string",des : "按钮样式",value : "default"
+      name : "theme",type : "string",des : "按钮样式[success,primary,info,warning,danger,link,自定义的btn-xxx]",value : "default"
     },{
       name : "handler",type : "function",des : "按钮点击事件处理方法，方法内部上下文为dialog vm，并传入按钮vm对象参数(el.handler.call(this,el))",
       value : "avalon.noop"

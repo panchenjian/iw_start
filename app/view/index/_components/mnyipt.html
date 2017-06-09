@@ -7,20 +7,20 @@
 		<xmp :widget='@$jsIpt'></xmp>
 	</pre>
 	<code>js:</code>
-	<pre class='demo-code'>
-		$htmlIpt : {
-	    	is : "ms-mnyipt"
-		},
-		$jsIpt : {
-	    	is : "ms-mnyipt",
-	    	max:1000,
-	    	referVal:"300",
-	    	hideZero:false,
-	    	theme:"aa",
-	    	handler:function(a,b){
-	    		avalon.log("金额值是："+a+",如果有辅助比较金额"+b);
-	    	}
-		}
+	<pre><code class="javascript">
+$htmlIpt : {
+	is : "ms-mnyipt"
+},
+$jsIpt : {
+	is : "ms-mnyipt",
+	max:1000,
+	referVal:"300",
+	hideZero:false,
+	theme:"aa",
+	handler:function(a,b){
+		avalon.log("金额值是："+a+",如果有辅助比较金额"+b);
+	}
+}</code>
 	</pre>
 	<code>结果:</code><br/>
 	htmlIpt:

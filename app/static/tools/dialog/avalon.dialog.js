@@ -83,6 +83,8 @@ avalon.component("ms-dialog",{
 		open : function(){
 			if(this.onBeforeOpen() === false) return;
 			avalon(document.body).addClass("modal-open");
+			var z=avalon(this.$element.children[0]);
+			z.css("top",(avalon(window).height() - z.height()-80) / 2);//弹窗垂直居中
 			this.isOpen = true;
 			var modalBackDrop = avalon.vmodels.modalBackDrop;
 			modalBackDrop.visible = true;

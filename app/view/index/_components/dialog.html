@@ -22,7 +22,7 @@
 			is : "ms-dialog",
 			title : 'jsDialog',
 			content : "<h1>rr444rrr</h1><h2>regergrg</h2>",
-			buttons : [{text : 'ok',close : true}]
+			buttons : [{text : 'ok',close : true,theme:'success'}]
 		},
 		showJsDialog : function(){
 			avalon.vmodels.jsDialog.open();
@@ -37,6 +37,7 @@
   <xmp ms-widget='@$jsconfig'></xmp>
   <h2>配置项说明</h2>
   <xmp :widget="@$attr"></xmp>
+  <br/><br/>
   <xmp :widget="@$attr_buttons"></xmp>
   <hr>
   <xmp :widget="@$method"></xmp>
