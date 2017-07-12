@@ -15,7 +15,7 @@ avalon.define({
 		is : "ms-dialog",
 		title : 'jsDialog',
 		content : "<h1>rr444rrr</h1><h2>regergrg</h2>",
-		buttons : [{text : 'ok',close : true,theme:'success'}]
+		buttons : [{text : 'ok',close : true,theme:'success',handler:function(a,b){console.log(a,b);return false}}]
 	},
 	showJsDialog : function(){
 		avalon.vmodels.jsDialog.open();

@@ -9,10 +9,12 @@ require("./table/avalon.table");
 require("./autocomplete/avalon.autocomplete");
 require("./dropdown/avalon.dropdown");
 require("./chooseli/avalon.chooseli");
+require("./load/avalon.load");
 require("./mnyipt/avalon.mnyipt");
 require("./tooltip/avalon.tooltip");
 require("./tab/avalon.tab");
 require("./tree/avalon.tree");
+require("./vsrollist/avalon.vsrollist");
 require("./datetimepicker/avalon.datetimepicker");
 //ajax
 //require("./ajax");
