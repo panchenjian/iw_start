@@ -1,0 +1,6 @@
+<div :class="@theme">
+<ul :visible="@data.length" class="chooseUl">
+	<li ms-for="i in @data" :class="[ @isRadio?'checkRadio':'checkboxs',i.ck&&!@isRadio&&'checkedboxs',i.ck&&@isRadio&&'checkedRadio']" ms-text="i.txt" :click="@clk(i)"></li>
+</ul>
+<div :visible="0==@data.length" ms-text="@nodataMsg"></div>
+</div>

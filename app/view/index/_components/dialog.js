@@ -15,7 +15,11 @@ avalon.define({
 		is : "ms-dialog",
 		title : 'jsDialog',
 		content : "<h1>rr444rrr</h1><h2>regergrg</h2>",
-		buttons : [{text : 'ok',close : true,theme:'success',handler:function(a,b){console.log(a,b);return false}}]
+    bgNoHide:true,
+    width:800,
+		buttons : [{text : 'ok1',close : true,theme:'success',handler:function(a,b){console.log(a,b);return false}},
+               {text : 'ok2',close : true,theme:'success'}
+              ]
 	},
 	showJsDialog : function(){
 		avalon.vmodels.jsDialog.open();
@@ -36,6 +40,10 @@ avalon.define({
       name : "title",type : "string",des : "dialog标题",value : "''"
     },{
       name : "content",type : "string",des : "dialog html内容",value : "''"
+    },{
+      name : "width",type : "string",des : "弹窗的宽度,支持像素和百分比",value : "600px"
+    },{
+      name : "bgNoHide",type : "bool",des : "点击遮罩是否要关闭弹窗，默认关闭",value : "false (直接关闭)"
     },{
       name : "btnAlign",type : "string",des : "按钮对齐方向(left,center,right)",value : "''(向右对齐)"
     },{

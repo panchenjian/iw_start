@@ -8,6 +8,7 @@ require('es6-promise/auto');
  * 功能扩展包
  * */
 window.$ = require('./tools/jquery.min');
+window._ = require('./tools/lodash.min');
 //require('avalon2');
 require('./tools/avalonbootstrap');
 

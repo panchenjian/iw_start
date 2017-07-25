@@ -1,0 +1,28 @@
+<div :controller="demo_load" class='demo'>
+	<h2>加载loading组件</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+
+		<xmp :widget='@$jsIpt'></xmp>
+	</pre>
+	<code>js:</code>
+	<pre><code class="javascript">
+$jsIpt : {
+	is : "ms-load",
+	$id:'testLoad',
+	loading : false,//显示隐藏
+	color:'#6495ed',//边框颜色
+	size:30,//图形宽高像素
+	borderWidth:2,//边框厚度
+	fix:false,//是否全屏遮罩
+	theme:"aa"
+}</code>
+	</pre>
+	<code>结果:</code><br/>
+	jsIpt:看看组件的class名
+	<button ms-click="@show">显示</button><button ms-click="@fix">全屏遮罩显示</button>
+	<xmp ms-widget="@config"></xmp>
+	<br/><br/>
+	<xmp :widget="@$attr"></xmp><br/>
+	<!-- <xmp :widget="@$method"></xmp> -->
+</div>

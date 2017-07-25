@@ -1,0 +1,32 @@
+<div ms-visible="@show" class="bzBox2 noBod">
+  <table class="table table-bordered mgb8">
+    <tr ms-visible="@hasUsua">
+      <td class="sinleft">常用</td>
+      <td>
+        <ul class="abeam">
+          <li ms-for="x in @cddata |cnt| orderBy('cnt' -1) |limitBy(10)">
+            <label class="curhandHov" :class="{'checkboxs le5':(@iptype!='radio'?true:false),'checkedboxs':(((@iptype!='radio')&&x.Checked)?true:false)}" ms-click="@labelClick(x) |stop|prevent">&emsp;{{x.Name}}</label>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="sinleft">全部</td>
+      <td>
+        <div class="input-group inputgroup90">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-search themeStyle2"></span></span>
+          <input type="text" class="form-control h30" placeholder="输入拼音首字母、拼音或汉字快速查询" ms-duplex="@msg|debounce"  />
+        </div>
+        <div class="panelscoll">
+          <ul>
+            <li ms-for="x in @cddata| filterBy(@fn, @msg)">
+              <label class="curhandHov" :class="{'checkboxs le5':(@iptype!='radio'?true:false),'checkedboxs':(((@iptype!='radio')&&x.Checked)?true:false)}" ms-click="@labelClick(x)|stop|prevent">&emsp;{{x.Name}}</label>
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <slot name="content" />
+  <button type="button" class="btn btn-default col-xs-offset-9" ms-click="@hide">关闭</button>
+</div>

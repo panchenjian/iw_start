@@ -1,0 +1,51 @@
+<div :controller="demo_chooseli" class='demo'>
+	<h2>带选择效果的列表组件</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+		空列表:
+		<xmp :widget='@$htmlIpt'></xmp>
+		多选列表:
+		<xmp :widget='@$duoIpt'></xmp>
+		组件有个隐藏的全选属性:allck 现在是 <span class="text-danger" ms-text="avalon.vmodels.test1.allck"></span>
+		单选列表:
+		<xmp :widget='@$danIpt'></xmp>
+		组件有个隐藏的全选属性:allck 现在是 <span class="text-danger" ms-text="avalon.vmodels.test2.allck"></span>
+	</pre>
+	<code>js:</code>
+	<pre><code class="javascript">
+$htmlIpt : {
+	is : "ms-chooseli",
+	nodataMsg:"列表数据为空"
+},
+$duoIpt : {
+	is : "ms-chooseli",
+	$id:'test1',
+	data:getData(),
+	handler:function(i){
+		avalon.log("金额值是：",i);
+	}
+},
+$danIpt : {
+	is : "ms-chooseli",
+	$id:'test2',
+	data:getData(),
+	isRadio:true,//单选
+	handler:function(i){
+		avalon.log("金额值是：",i);
+	}
+}
+	</code>
+	</pre>
+	<code>结果:</code><br/>
+	空列表:
+	<xmp :widget='@$htmlIpt'></xmp>
+	多选列表:
+	<xmp :widget='@$duoIpt'></xmp>
+	组件有个隐藏的全选属性:allck 现在是 <span class="text-danger" ms-text="avalon.vmodels.test1.allck"></span>
+	<br/>单选列表:
+	<xmp :widget='@$danIpt'></xmp>
+	组件有个隐藏的全选属性:allck 现在是 <span class="text-danger" ms-text="avalon.vmodels.test2.allck"></span>
+	<br/><br/>
+	<xmp :widget="@$attr"></xmp><br/>
+	<xmp :widget="@$method"></xmp>
+</div>

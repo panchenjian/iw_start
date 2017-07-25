@@ -1,5 +1,5 @@
-<div class='modal fade' :visible='@isOpen' :class="{'in' : @isIn}" :css="{zIndex : @zIndex}" :click='@close'>
-  <div class="modal-dialog" :on-transitionend="@transitionend">
+<div class='modal fade' :visible='@isOpen' :class="{'in' : @isIn}" :css="{zIndex : @zIndex}" :click='@close($event,@bgNoHide)'>
+  <div class="modal-dialog" :on-transitionend="@transitionend" :css="{width:@width}">
     <div class="modal-content">
       <div class="modal-header" :if='@title'>
         <button type="button" class="close" :click='@close(null)'><span>&times;</span></button>

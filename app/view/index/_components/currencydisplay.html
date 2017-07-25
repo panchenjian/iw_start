@@ -1,0 +1,19 @@
+<div :controller="demo_currencydisplay" class='demo'>
+	<h2>初始化</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+		<span ms-text="@aa|currencyNo"></span><br>
+		<span ms-text="@bb|currencyNo"></span>
+	</pre>
+	<code>js:</code>
+	<pre class='demo-code'>
+		aa:0,
+		bb:123456
+	</pre>
+	<code>结果:</code>
+	金额为0的不显示
+	<span ms-text="@aa | currencyNo"></span><br/>
+	<span ms-text="@bb | currencyNo"></span><br/><hr/>
+	cnt过滤器是配合常用的数据返回的cnt次数来筛选过滤数据>0次的，例如选择领导里的常用领导。
+	数据参数是（data,要依照的排序keyname），第二参数可省略，默认为‘cnt’
+</div>

@@ -1,0 +1,26 @@
+<div :controller="demo_per100" class='demo'>
+	<h2>代替vue的过滤器的wirte、read方式，初始化</h2>
+	<h3>因为avalon的xmp组件写法，不能嵌套。所以采用指令来实现。不嫌烦，可以用append也是一种思路</h3>
+	<code>html:</code>
+	<pre class='demo-code'>
+		<div type="text" ms-per100="@cc" ></div><br>
+	</pre>
+	<code>js:</code>
+	<pre><code class="javascript">
+	{
+		$id : "demo_per100",
+		aa:"1",
+		cc:'{"v":"@aa","w":"@writ($event)"}',
+		writ:function(event){
+			this.aa=event.target.value/100;
+		},
+		percentage: '{"v":"x.Percentage","r":"@rad(x)","w":"@writ($event,x)","theme":"nobg text-right"}'//这样的都可以
+	}
+	</code></pre>
+	<code>结果:</code>
+	一个显示的值是传入的值100倍。（费用分摊百分比用的就是此）
+	<div type="text" ms-per100="@cc" ></div><br><!-- <span ms-per100="@aa"></span> -->
+	<input type="text" ms-duplex="@aa" />
+	<hr/>
+	<xmp :widget="@$attr"></xmp><br/>
+</div>

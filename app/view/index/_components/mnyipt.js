@@ -6,6 +6,7 @@ avalon.define({
 	},
 	$jsIpt : {
     	is : "ms-mnyipt",
+    	val:123,
     	max:1000,
     	referVal:"300",
     	hideZero:false,

@@ -1,0 +1,98 @@
+<div :controller="demo_vsrollist" class='demo'>
+	<h2>虚拟列表组件</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+		<xmp :widget='@$htmlIpt'>
+			<div class="item" ms-for="(udf, index) in @$items | limitBy(avalon.vmodels.demoTs.remain,avalon.vmodels.demoTs.delta.start)" slot="content">
+		        <span>Item # { index.i }</span>
+		    </div>
+		</xmp>
+		
+		<div style="position:relative;">
+			<xmp :widget='@$jsIpt'>
+				<div class="item" ms-for="(udf, index) in @items2 | limitBy(avalon.vmodels.demoTs2.remain+avalon.vmodels.demoTs2.delta.keeps,avalon.vmodels.demoTs2.delta.start)" slot="content">
+			        <span>Item # { index.i }</span>
+			    </div>
+			</xmp>
+			<xmp ms-widget="{is:'ms-load',$id:'loading',theme:'list-loading'}"></xmp>
+		</div>
+	</pre>
+	<code>js:</code>
+	<pre><code class="javascript">
+{
+	$id : "demo_vsrollist",
+	$htmlIpt : {
+    	is : "ms-vsrollist",
+    	$id:'demoTs',
+    	size:50,
+    	remain:8,
+    	total:100,
+    	start:13
+	},
+	setStart:function($event){
+		//console.log(this.$htmlIpt.start);//这个值还没那么快反应过来
+		avalon.vmodels.demoTs.setScrollTop(this.$htmlIpt.size*$event.currentTarget.value);
+	},
+	$items:setData(),
+
+	//第二个例子所使用
+	items2:setData(20),
+	times:0,
+	$jsIpt : {
+    	is : "ms-vsrollist",
+    	$id:'demoTs2',
+    	size:50,
+    	remain:8,
+    	total:20,
+    	tobottom:function(){
+    		console.log("暂时到底了");
+    		avalon.vmodels.loading.loading = true;
+    		setTimeout(function(){
+                avalon.vmodels.demo_vsrollist.times++;
+                avalon.vmodels.loading.loading = false;
+                //使用avalon的数据变化才能触发视图更新
+                avalon.vmodels.demo_vsrollist.items2.pushArray(setData(20,avalon.vmodels.demo_vsrollist.times*20));
+                avalon.vmodels.demoTs2.total +=20;
+            }, 2017)
+    	}
+	}
+}
+	</code>
+	</pre>
+	<code>结果:</code><br/>
+	<br/>
+	htmlIpt:滚动到第 <input type="text" ms-duplex="@$htmlIpt.start" ms-on-input="@setStart($event)| debounce(200)" style="width:50px"/>个
+	<xmp :widget='@$htmlIpt'>
+		
+		<div class="item" ms-for="(udf, index) in @$items | limitBy(avalon.vmodels.demoTs.remain+avalon.vmodels.demoTs.delta.keeps,avalon.vmodels.demoTs.delta.start)" slot="content">
+	        <span>Item # {{ index.i }}</span>
+	    </div>
+	</xmp>
+	<br/><hr style="height:3px;background-color: #ccc;"/>
+	jsIpt:滚动再加载,滚动加载 <span ms-text="@times"></span> 次，数据长度为<span ms-text="20*@times+20"></span>
+	<div style="position:relative;">
+		<xmp :widget='@$jsIpt'>
+			<div class="item" ms-for="(udf, index) in @items2 | limitBy(avalon.vmodels.demoTs2.remain+avalon.vmodels.demoTs2.delta.keeps,avalon.vmodels.demoTs2.delta.start)" slot="content">
+		        <span>Item # {{ index.i }}</span>
+		    </div>
+		</xmp>
+		<xmp ms-widget="{is:'ms-load',$id:'loading',theme:'list-loading'}"></xmp>
+	</div>
+	<br/><br/>
+	<xmp :widget="@$attr"></xmp><br/>
+	<xmp :widget="@$method"></xmp>
+</div>
+<style>
+.item {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+}
+.list-loading{    
+	position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+</style>

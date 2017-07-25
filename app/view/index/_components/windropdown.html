@@ -1,0 +1,40 @@
+<div :controller="demo_windropdown" class='demo'>
+	<h2>弹窗列表初始化</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+		<xmp :widget='@$config'></xmp>
+		<xmp :widget='@$config1'></xmp>
+		<xmp :widget='@$config2'></xmp>
+	</pre>
+	<code>js:</code>
+	<pre>
+		<code class="lang-javascript">
+$config : {
+  	is : "ms-windropdown",$id:"windrp1",
+  	cddata : getData(),
+    show:true,hasUsua:true,handler:function(a,b,c){console.log("调用成功",a)},
+    biaoshi:"showLeader2"
+	},
+$config2 : {
+	is : "ms-windropdown2",$id:"windrp2",
+	size:50,
+	remain:8,
+	total:100,
+	start:13,
+	cddata : getData(100),
+	show:true,hasUsua:true,handler:function(a,b,c){console.log("调用成功",a)},
+	biaoshi:"showLeader2"
+}
+		</code>
+	</pre>
+	<code>结果:</code>
+	原版:
+	<xmp :widget='@$config'></xmp>
+	<br/>
+	加上虚拟列表版：
+	<xmp :widget='@$config2'></xmp>
+	
+	<h3>虚拟弹窗，用于选择领导，项目之类</h3>
+	<xmp :widget="@$attr"></xmp><br/>
+	<xmp :widget="@$method"></xmp>
+</div>

@@ -29,9 +29,11 @@ avalon.component("ms-dialog",{
 		buttons : [],
 		title : '',
 		content : '',
+		bgNoHide:false,//点击遮罩是否要关闭弹窗
 		isOpen : false,
 		isIn : false,
 		zIndex : 1050,
+		width:600,//默认弹窗宽度
 		bodyStyle : {},
 		btnAlign : "",
 		//事件
@@ -52,11 +54,12 @@ avalon.component("ms-dialog",{
 				this.close();
 			}
 		},
-		close : function(e){
+		close : function(e,bgNoHide){
 			if(this.onBeforeClose() === false || this.$isClosing) return;
 			if(e && !avalon(e.target).hasClass("modal")){
 				return;
 			}
+			if(bgNoHide){return;}
 			this.isIn = false;
 			if(AB.support.transitionend){
 				this.$isClosing = true;

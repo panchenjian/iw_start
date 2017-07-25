@@ -1,0 +1,5 @@
+<div class='list' :css="{height:@delta.viewHeight + 'px'}" style="overflow-y:auto" ms-on-scroll="@handleScroll">
+	<div :css="{paddingTop:@delta.paddingTop+'px',paddingBottom:@delta.allPadding - @delta.paddingTop+'px'}" >
+		<slot name="content" />
+	</div>
+</div>
