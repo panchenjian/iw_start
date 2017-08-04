@@ -13,6 +13,7 @@ require("./chooseli/avalon.chooseli");
 require("./load/avalon.load");
 require("./mnyipt/avalon.mnyipt");
 require("./per100/avalon.per100");
+require("./progressbar/avalon.progressbar");
 require("./tooltip/avalon.tooltip");
 require("./tab/avalon.tab");
 require("./tree/avalon.tree");

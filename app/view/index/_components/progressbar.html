@@ -1,0 +1,25 @@
+<div :controller="demo_progressbar" class='demo'>
+	<h2>进度条组件</h2>
+	<code>html:</code>
+	<pre class='demo-code'>
+
+		<xmp :widget='@$jsIpt'></xmp>
+	</pre>
+	<code>js:</code>
+	<pre><code class="javascript">
+$jsIpt : {
+	is : "ms-progressbar",
+	$id:'testLoad',
+	now:50,
+	label:true,
+	striped:true
+}</code>
+	</pre>
+	<code>结果:</code><br/>
+	<button ms-click="@random" class="btn btn-default">随机进度</button><br/><br/>
+	<xmp ms-widget="@$jsIpt"></xmp>
+
+	<xmp ms-widget="@$attr"></xmp>
+	<br/><br/>
+	<!-- <xmp :widget="@$method"></xmp> -->
+</div>
