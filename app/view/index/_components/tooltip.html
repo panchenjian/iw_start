@@ -17,6 +17,13 @@
 		}
 	</pre>
 	<code>结果:</code>
-	<span ms-tooltip="@$tooltip1">tooltip(hover me)</span><br>
-	<span ms-tooltip="@$tooltip2">popover(click me)</span>
+	<span ms-tooltip="@$tooltip1">tooltip(hover me)</span><br />
+	<span ms-tooltip="@$tooltip2">popover(click me)</span><br />
+	<h4>提示只作为一次使用，也就是初次绑定的值。若需要跟随值变化，设置参数once=false</h4>
+	<div id="aa">
+		<span ms-tooltip="{position : 'right',content : @aa,once:false}">内容变化,修改输入框的值，再鼠标看看我提示的值</span>
+	</div>
+	修改绑定的值aa看看：<input ms-duplex="@aa" type="text" placeholder="修改绑定的值看看"/>
+	<br/><br/>
+	<xmp :widget="@$attr"></xmp><br/>
 </div>

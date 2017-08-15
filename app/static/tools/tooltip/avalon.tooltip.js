@@ -8,7 +8,8 @@ var Defaults = {
 	//tooltip popover
 	type : "tooltip",
 	//popover options
-	title : ""
+	title : "",
+	once:true //数据只能用一次
 };
 var hideEventHandle;
 avalon.directive('tooltip', {
@@ -52,6 +53,7 @@ avalon.directive('tooltip', {
 		}
 		function show(){
 			if(!tip){
+				value.once||(value.content=$(element).attr("oncemore"));
 				tip = document.createElement("div");
 				tip.className = value.type + " fade " + value.position;
 				if(value.type === 'tooltip'){
@@ -106,5 +108,8 @@ avalon.directive('tooltip', {
 				outTip();
 			}
 		}
-	}
+	},
+	update: function update(vdom, val) {
+        $(this.node.dom).attr("oncemore",val.content);
+    }
 });
