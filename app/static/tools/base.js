@@ -80,7 +80,7 @@ avalon.fn.appendHTML = function(htmlStr){
   	}
     fragment.appendChild(node);
   }
-  this[0].appendChild(fragment);
+  this[0]&&this[0].appendChild(fragment);
   return first;
   //el.insertBefore(fragment, el.firstChild);
   

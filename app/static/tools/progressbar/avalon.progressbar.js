@@ -7,7 +7,7 @@ avalon.component("ms-progressbar",{
 		label : false,
 		type:'',
 		striped: false,
-		animated: false
-		
+		animated: false,
+		hide:false
 	}
 });
